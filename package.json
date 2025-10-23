@@ -1,18 +1,32 @@
 {
   "name": "fogon-pruebas",
   "version": "1.0.0",
-  "description": "",
+  "description": "Framework de pruebas con Gherkin para testing en lenguaje natural con soporte para API REST y MongoDB en diferentes entornos",
   "main": "index.js",
   "scripts": {
     "test": "cucumber-js",
     "test:dev": "NODE_ENV=development cucumber-js",
     "test:prod": "NODE_ENV=production cucumber-js",
     "test:api": "cucumber-js features/api.feature",
-    "test:database": "cucumber-js features/database.feature"
+    "test:database": "cucumber-js features/database.feature",
+    "test:ejemplos": "cucumber-js features/ejemplos.feature"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "gherkin",
+    "cucumber",
+    "testing",
+    "bdd",
+    "api-testing",
+    "mongodb",
+    "integration-testing",
+    "e2e-testing"
+  ],
+  "author": "Luis Waldman",
   "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/LuisWaldman/fogon-pruebas.git"
+  },
   "devDependencies": {
     "@cucumber/cucumber": "^12.2.0"
   },
