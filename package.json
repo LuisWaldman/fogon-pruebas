@@ -1,0 +1,24 @@
+{
+  "name": "fogon-pruebas",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "cucumber-js",
+    "test:dev": "NODE_ENV=development cucumber-js",
+    "test:prod": "NODE_ENV=production cucumber-js",
+    "test:api": "cucumber-js features/api.feature",
+    "test:database": "cucumber-js features/database.feature"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@cucumber/cucumber": "^12.2.0"
+  },
+  "dependencies": {
+    "axios": "^1.12.2",
+    "dotenv": "^17.2.3",
+    "mongodb": "^6.20.0"
+  }
+}

@@ -11,8 +11,8 @@ yarn.lock
 
 # Reports
 reports/
-*.html
-*.json
+reports/*.html
+reports/*.json
 
 # Logs
 logs/
