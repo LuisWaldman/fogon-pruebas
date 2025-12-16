@@ -1,15 +1,15 @@
 using Microsoft.Playwright;
 
-namespace PlaywrightSpecFlowTests.Pages
+namespace fogonpruebas.Pages
 {
-    public class GoogleHomePage
+    public class FogonPagina
     {
         private readonly IPage _page;
         private readonly ILocator _searchBox;
         private readonly ILocator _searchButton;
         private readonly ILocator _acceptCookiesButton;
 
-        public GoogleHomePage(IPage page)
+        public FogonPagina(IPage page)
         {
             _page = page;
             _searchBox = _page.Locator("textarea[name='q'], input[name='q']");
@@ -20,17 +20,6 @@ namespace PlaywrightSpecFlowTests.Pages
         public async Task NavigateAsync(string url)
         {
             await _page.GotoAsync(url);
-            
-            // Handle cookies consent if present
-            try
-            {
-                await _acceptCookiesButton.WaitForAsync(new LocatorWaitForOptions { Timeout = 5000 });
-                await _acceptCookiesButton.ClickAsync();
-            }
-            catch (TimeoutException)
-            {
-                // Cookies consent not present or already handled
-            }
         }
 
         public async Task SearchAsync(string searchTerm)

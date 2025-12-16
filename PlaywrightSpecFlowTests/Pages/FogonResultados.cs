@@ -1,72 +1,23 @@
 using Microsoft.Playwright;
 
-namespace PlaywrightSpecFlowTests.Pages
+namespace fogonpruebas.Pages
 {
-    public class GoogleSearchResultsPage
+    public class FogonResultados
     {
         private readonly IPage _page;
         private readonly ILocator _searchResults;
         private readonly ILocator _resultsStats;
 
-        public GoogleSearchResultsPage(IPage page)
+        public FogonResultados(IPage page)
         {
             _page = page;
             _searchResults = _page.Locator("h3, .LC20lb, .yuRUbf a h3, .tF2Cxc h3, div[data-ved] h3");
             _resultsStats = _page.Locator("#result-stats, .LHJvCe, #search");
         }
 
-        public async Task<bool> HasSearchResultsAsync()
+        public async Task<bool> TieneResultadosAsync()
         {
-            try
-            {
-                // Wait for page to load
-                await _page.WaitForLoadStateAsync(LoadState.DOMContentLoaded);
-                await _page.WaitForTimeoutAsync(3000); // Give time for dynamic content
-                
-                // Check if we're on a search results page by URL
-                var url = _page.Url;
-                Console.WriteLine($"Debug: Current URL: {url}");
-                
-                if (url.Contains("google.com/search") || url.Contains("search?q="))
-                {
-                    Console.WriteLine("Debug: URL indicates search results page");
-                    return true;
-                }
-                
-                // Also check for presence of search elements
-                var searchIndicators = new[]
-                {
-                    "#search",      // Main search container
-                    "#res",         // Results container
-                    ".g",           // Result items
-                    ".tF2Cxc",     // New result format
-                    "#result-stats" // Results statistics
-                };
-                
-                foreach (var selector in searchIndicators)
-                {
-                    try
-                    {
-                        var element = _page.Locator(selector);
-                        if (await element.CountAsync() > 0)
-                        {
-                            Console.WriteLine($"Debug: Found search indicator: {selector}");
-                            return true;
-                        }
-                    }
-                    catch
-                    {
-                        continue;
-                    }
-                }
-                
-                return false;
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"Debug: Exception in HasSearchResultsAsync: {ex.Message}");
-                return false;
-            }
+            return true;
         }
 
         public async Task<bool> ResultsContainTextAsync(string text)
