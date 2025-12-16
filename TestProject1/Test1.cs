@@ -6,7 +6,7 @@ namespace TestProject1
     public class Test1 : PageTest
     {
         [TestMethod]
-        public async Task HomepageHasPlaywrightInTitleAndGetStartedLinkLinkingToTheIntroPage()
+        public async Task PruebaNueva()
         {
             await Page.GotoAsync("https://playwright.dev");
 
