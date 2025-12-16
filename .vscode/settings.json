@@ -1,0 +1,14 @@
+{
+    "dotnet-test-explorer.testProjectPath": "**/*Tests.@(csproj|vbproj|fsproj)",
+    "dotnet-test-explorer.enableTelemetry": false,
+    "dotnet-test-explorer.autoExpandTree": true,
+    "dotnet-test-explorer.runInParallel": false,
+    "dotnet-test-explorer.preTestCommand": "",
+    "dotnet-test-explorer.postTestCommand": "",
+    "dotnet-test-explorer.testArguments": "--settings playwright.runsettings --logger:console;verbosity=normal",
+    "dotnet-test-explorer.pathForResultFile": "./TestResults/",
+    "dotnet-test-explorer.showCodeLens": true,
+    "dotnet-test-explorer.codeLensFailed": "❌ $(x) Failed",
+    "dotnet-test-explorer.codeLensPassed": "✅ $(check) Passed",
+    "dotnet-test-explorer.codeLensSkipped": "⚠ $(alert) Skipped"
+}

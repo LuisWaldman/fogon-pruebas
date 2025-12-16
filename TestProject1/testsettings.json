@@ -1,0 +1,5 @@
+{
+  "BaseUrl": "https://playwright.dev",
+  "Headed": true,
+  "SlowMo": 1000
+}
