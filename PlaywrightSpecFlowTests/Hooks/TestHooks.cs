@@ -33,6 +33,7 @@ namespace PlaywrightSpecFlowTests.Hooks
             _page.SetDefaultTimeout(config.TestSettings.Timeout);
             
             _scenarioContext["Page"] = _page;
+            _scenarioContext["BrowserContext"] = context;
             _scenarioContext["Configuration"] = config;
         }
 

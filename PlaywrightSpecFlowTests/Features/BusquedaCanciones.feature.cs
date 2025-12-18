@@ -28,7 +28,7 @@ namespace fogonpruebas.Features
         
         private static string[] featureTags = ((string[])(null));
         
-#line 1 "Fogon.feature"
+#line 1 "BusquedaCanciones.feature"
 #line hidden
         
         [NUnit.Framework.OneTimeSetUpAttribute()]

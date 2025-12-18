@@ -20,8 +20,8 @@ namespace fogonpruebas.Features
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.9.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("Buscar canciones")]
-    public partial class BuscarCancionesFeature
+    [NUnit.Framework.DescriptionAttribute("Sesiones colaborativas")]
+    public partial class SesionesColaborativasFeature
     {
         
         private TechTalk.SpecFlow.ITestRunner testRunner;
@@ -35,8 +35,9 @@ namespace fogonpruebas.Features
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "Buscar canciones", "    El fogon permite buscar canciones por autor y por nombre\r\n    pero tambien po" +
-                    "r caracteristicas tipicas como la escala, el tempo o la cantidad de acordes.", ProgrammingLanguage.CSharp, featureTags);
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "Sesiones colaborativas", "    La principal particularidad del fogon es la de mantener sesiones compartidas\r" +
+                    "\n    El estado compartido es la cancion, la lista de canciones y los roles de ca" +
+                    "da integrante \r\n    en la sesion (o fogon) ", ProgrammingLanguage.CSharp, featureTags);
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -75,13 +76,13 @@ namespace fogonpruebas.Features
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Busca paloma de calamaro")]
-        public void BuscaPalomaDeCalamaro()
+        [NUnit.Framework.DescriptionAttribute("Dos usuarios se conectan")]
+        public void DosUsuariosSeConectan()
         {
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Busca paloma de calamaro", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 5
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Dos usuarios se conectan", null, tagsOfScenario, argumentsOfScenario, featureTags);
+#line 6
     this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
@@ -91,14 +92,23 @@ namespace fogonpruebas.Features
             else
             {
                 this.ScenarioStart();
-#line 6
-        testRunner.Given("Usuario va al fogon", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line hidden
 #line 7
-        testRunner.When("busca \"flaca calamaro\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+        testRunner.Given("\"Usuario1\" accede a la aplicacion", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 8
-        testRunner.Then("aparecen resultados relacionados con \"flaca calamaro\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+        testRunner.And("\"Usuario2\" accede a la aplicacion", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 9
+        testRunner.And("\"Usuario2\" inicia un fogon", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 10
+        testRunner.And("\"Usuario2\" carga la cancion \"adios nonino\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 11
+     testRunner.When("\"Usuario1\" se une al fogon de \"Usuario2\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 12
+ testRunner.Then("\"Usuario1\" ve la cancion \"adios nonino\" en reproduccion", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
