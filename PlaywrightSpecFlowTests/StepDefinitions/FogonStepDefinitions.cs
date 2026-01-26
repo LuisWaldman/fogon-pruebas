@@ -2,8 +2,9 @@ using fogonpruebas.Pages;
 using Microsoft.Playwright;
 using NUnit.Framework;
 using PlaywrightSpecFlowTests.Configuration;
-using TechTalk.SpecFlow;
 using System.Collections.Generic;
+using TechTalk.SpecFlow;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace fogonpruebas
 {
@@ -16,6 +17,7 @@ namespace fogonpruebas
         private Dictionary<string, FogonPagina> _usuarioFogonPages;
         private string _fogonId;
 
+        private FogonResultados _fogonResultados;
         public FogonStepDefinitions(ScenarioContext scenarioContext)
         {
             _scenarioContext = scenarioContext;
@@ -45,7 +47,7 @@ namespace fogonpruebas
         public async Task GivenUsuarioIniciaUnFogon(string usuario)
         {
             var fogonPagina = _usuarioFogonPages[usuario];
-            _fogonId = await fogonPagina.IniciarFogonAsync();
+            await fogonPagina.IniciarFogonAsync();
             
             Console.WriteLine($"{usuario} ha iniciado el fogón con ID: {_fogonId}");
         }
@@ -56,10 +58,12 @@ namespace fogonpruebas
             var fogonPagina = _usuarioFogonPages[usuario];
             await fogonPagina.CargarCancionAsync(cancion);
             
+            
             Console.WriteLine($"{usuario} ha cargado la canción: {cancion}");
         }
 
         [When(@"""([^""]*)"" se une al fogon de ""([^""]*)""")]
+        [Given(@"""([^""]*)"" se une al fogon de ""([^""]*)""")]
         public async Task WhenUsuarioSeUneAlFogonDe(string usuario1, string usuario2)
         {
             var fogonPagina = _usuarioFogonPages[usuario1];
@@ -67,6 +71,14 @@ namespace fogonpruebas
             
             Console.WriteLine($"{usuario1} se ha unido al fogón de {usuario2}");
         }
+
+        [When(@"""([^""]*)"" va a tocar")]
+        public async void WhenVaATocar(string usuario)
+        {
+            var fogonPagina = _usuarioFogonPages[usuario];
+            await fogonPagina.IrATocar();
+        }
+
 
         [Then(@"""([^""]*)"" ve la cancion ""([^""]*)"" en reproduccion")]
         public async Task ThenUsuarioVeLaCancionEnReproduccion(string usuario, string cancion)

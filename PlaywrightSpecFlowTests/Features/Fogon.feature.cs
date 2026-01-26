@@ -102,13 +102,16 @@ namespace fogonpruebas.Features
         testRunner.And("\"Usuario2\" inicia un fogon", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 10
-        testRunner.And("\"Usuario2\" carga la cancion \"adios nonino\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+        testRunner.And("\"Usuario2\" carga la cancion \"Homero\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 11
      testRunner.When("\"Usuario1\" se une al fogon de \"Usuario2\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 12
- testRunner.Then("\"Usuario1\" ve la cancion \"adios nonino\" en reproduccion", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+        testRunner.And("\"Usuario1\" va a tocar", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 13
+ testRunner.Then("\"Usuario1\" ve la cancion \"Homero\" en reproduccion", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

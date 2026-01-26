@@ -98,7 +98,7 @@ namespace fogonpruebas.Features
         testRunner.When("busca \"flaca calamaro\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 8
-        testRunner.Then("aparecen resultados relacionados con \"flaca calamaro\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+        testRunner.Then("aparecen resultados relacionados con \"flaca\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

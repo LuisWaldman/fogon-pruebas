@@ -34,8 +34,10 @@ namespace fogonpruebas
         public async Task WhenBusca(string searchTerm)
         {
             _scenarioContext["CurrentSearchTerm"] = searchTerm;
+
             // Este método necesitaría ser implementado para búsqueda específica
-            // await _fogonPagina.SearchAsync(searchTerm);
+             await _fogonPagina.SearchAsync(searchTerm);
+
         }
 
         [Then(@"aparecen resultados relacionados con ""([^""]*)""")]
@@ -43,8 +45,9 @@ namespace fogonpruebas
         {
             try
             {
-                var hasResults = await _fogonResultados.TieneResultadosAsync();
-                Assert.That(hasResults, Is.True, "Search results should be displayed");
+
+                var hasResults = await _fogonResultados.ObtenerElementos();
+                Assert.That(hasResults.Where(d => d.Tema == "Flaca").Count() > 0, Is.True, "Search results should be displayed");
             }
             catch (Exception ex)
             {

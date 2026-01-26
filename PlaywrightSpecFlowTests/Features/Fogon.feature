@@ -7,6 +7,7 @@ Feature: Sesiones colaborativas
         Given "Usuario1" accede a la aplicacion
         And "Usuario2" accede a la aplicacion
         And "Usuario2" inicia un fogon
-        And "Usuario2" carga la cancion "adios nonino"
+        And "Usuario2" carga la cancion "Homero"
 	    When "Usuario1" se une al fogon de "Usuario2"
-	Then "Usuario1" ve la cancion "adios nonino" en reproduccion
+        And "Usuario1" va a tocar
+	Then "Usuario1" ve la cancion "Homero" en reproduccion

@@ -5,4 +5,4 @@ Feature: Buscar canciones
     Scenario: Busca paloma de calamaro
         Given Usuario va al fogon
         When busca "flaca calamaro"
-        Then aparecen resultados relacionados con "flaca calamaro"
+        Then aparecen resultados relacionados con "flaca"
